@@ -3,4 +3,5 @@ obj
 check_setting/bin
 check_setting/obj
 .idea
+.vs
 *DotSettings*
