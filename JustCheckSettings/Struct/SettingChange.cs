@@ -2,13 +2,11 @@
 
 using System;
 using Dalamud.Bindings.ImGui;
-using Dalamud.Interface;
-using Dalamud.Interface.Utility.Raii;
 using TextCopy;
 
 #endregion
 
-namespace check_setting;
+namespace JustCheckSettings.Struct;
 
 public record SettingChange
 {

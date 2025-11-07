@@ -5,17 +5,18 @@ using System.Collections.Generic;
 using System.Linq;
 using Dalamud.Game.Config;
 using Dalamud.Utility;
+using JustCheckSettings.Struct;
 
 #endregion
 
-namespace check_setting;
+namespace JustCheckSettings.Logic;
 
-public static class Checker
+public static class Check
 {
     private static Dictionary<string, Dictionary<object, object>> _oldCfg     = [];
     private static Dictionary<string, Dictionary<object, object>> _currentCfg = [];
 
-    public static readonly Action Check = () =>
+    public static readonly Action Task = () =>
     {
         _oldCfg     = _currentCfg;
         _currentCfg = [];
@@ -23,7 +24,7 @@ public static class Checker
         CheckEnum<UiConfigOption>();
         CheckEnum<UiControlOption>();
 
-        if (Differ.TryGet(_oldCfg, _currentCfg, out var changes))
+        if (Diff.TryGet(_oldCfg, _currentCfg, out var changes))
         {
             SettingChanges.Add(changes);
 

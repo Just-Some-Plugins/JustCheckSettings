@@ -2,14 +2,16 @@
 
 using System.Numerics;
 using Dalamud.Bindings.ImGui;
+using Dalamud.Interface.Windowing;
+using JustCheckSettings.Struct;
 
 #endregion
 
-namespace check_setting;
+namespace JustCheckSettings.UI;
 
-public class Window : Dalamud.Interface.Windowing.Window
+public class ChangesDisplay : Window
 {
-    public Window() : base("Just Check Setting")
+    public ChangesDisplay() : base("Just Check Settings")
     {
         Flags = ImGuiWindowFlags.AlwaysAutoResize;
     }

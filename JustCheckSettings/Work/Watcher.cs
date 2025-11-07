@@ -2,11 +2,13 @@
 
 using System;
 using System.Threading;
-using static System.Threading.Tasks.Task;
+using System.Threading.Tasks;
+using JustCheckSettings.Logic;
+using JustCheckSettings.Struct;
 
 #endregion
 
-namespace check_setting;
+namespace JustCheckSettings.Work;
 
 public class Watcher : IDisposable
 {
@@ -20,7 +22,7 @@ public class Watcher : IDisposable
     private static readonly CancellationTokenSource Cancellation =
         new();
 
-    public static readonly Action Task = () =>
+    public static readonly Action Worker = () =>
     {
         if (Cancellation.IsCancellationRequested)
             return;
@@ -28,9 +30,9 @@ public class Watcher : IDisposable
         if ((DateTime.Now - LastCheck) < CheckFrequency)
             return;
 
-        Run(Checker.Check, Cancellation.Token);
+        Task.Run(Check.Task, Cancellation.Token);
 
-        Framework.RunOnTick(Task!,
+        Framework.RunOnTick(Worker!,
             delay: CheckFrequency,
             cancellationToken: Cancellation.Token);
     };

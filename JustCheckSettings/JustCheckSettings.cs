@@ -1,6 +1,6 @@
 ﻿#region
 
-global using static check_setting.CheckSetting;
+global using static JustCheckSettings.JustCheckSettings;
 using System;
 using Dalamud.Game.Command;
 using Dalamud.Interface.Windowing;
@@ -8,44 +8,46 @@ using Dalamud.IoC;
 using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
 using JetBrains.Annotations;
+using JustCheckSettings.UI;
+using JustCheckSettings.Work;
 using IPluginInterface = Dalamud.Plugin.IDalamudPluginInterface;
 using ICommands = Dalamud.Plugin.Services.ICommandManager;
 
 #endregion
 
-namespace check_setting;
+namespace JustCheckSettings;
 
 [UsedImplicitly]
-public class CheckSetting : IDalamudPlugin
+public class JustCheckSettings : IDalamudPlugin
 {
-    private readonly Watcher      _watcher      = new();
-    private readonly Window       _window       = new();
-    private readonly WindowSystem _windowSystem = new();
+    private readonly ChangesDisplay _changesDisplay = new();
+    private readonly Watcher        _watcher        = new();
+    private readonly WindowSystem   _windowSystem   = new();
 
-    public CheckSetting(IPluginInterface pluginInterface)
+    public JustCheckSettings(IPluginInterface pluginInterface)
     {
-        _windowSystem.AddWindow(_window);
+        _windowSystem.AddWindow(_changesDisplay);
 
-        Framework.RunOnTick(Watcher.Task, delay: TimeSpan.FromSeconds(1));
+        Framework.RunOnTick(Watcher.Worker, delay: TimeSpan.FromSeconds(1));
 
-        Interface.UiBuilder.OpenMainUi += _window.Open;
+        Interface.UiBuilder.OpenMainUi += _changesDisplay.Open;
         Interface.UiBuilder.Draw       += _windowSystem.Draw;
 
         Commands.AddHandler($"/{pluginInterface.InternalName.ToLower()}",
-            new CommandInfo(OpenCommand)
+            new CommandInfo(OpenMainCommand)
                 { HelpMessage = "Open the Window to check for Setting Changes" });
     }
 
     public void Dispose()
     {
-        Interface.UiBuilder.OpenMainUi -= _window.Open;
+        Interface.UiBuilder.OpenMainUi -= _changesDisplay.Open;
         Interface.UiBuilder.Draw       -= _windowSystem.Draw;
         _watcher.Dispose();
     }
 
-    public void OpenCommand(string _, string __)
+    private void OpenMainCommand(string _, string __)
     {
-        _window.Open();
+        _changesDisplay.Open();
     }
 
     #region Dalamud Properties

@@ -7,14 +7,17 @@
         <Version>0.0.1</Version>
         <Description>Just lets you identify what XIV Setting you just changed</Description>
         <Copyright>Ethan Henderson (zbee)</Copyright>
-        <PackageProjectUrl>https://github.com/Just-Some-Plugins/just_check_setting</PackageProjectUrl>
-        <PackageId>JustCheckSetting</PackageId>
-        <Product>JustCheckSetting</Product>
+        <PackageProjectUrl>https://github.com/Just-Some-Plugins
+            /JustCheckSettings
+        </PackageProjectUrl>
+        <PackageId>JustCheckSettings</PackageId>
+        <Product>JustCheckSettings</Product>
+        <RootNamespace>JustCheckSettings</RootNamespace>
     </PropertyGroup>
 
     <!-- Build Parameters -->
     <PropertyGroup>
-        <AssemblyName>JustCheckSetting</AssemblyName>
+        <AssemblyName>JustCheckSettings</AssemblyName>
         <TargetFramework>net9.0-windows</TargetFramework>
         <Configurations>Debug;Release</Configurations>
         <EnableWindowsTargeting>true</EnableWindowsTargeting>
@@ -32,10 +35,7 @@
     <!-- Required Paths -->
     <PropertyGroup>
         <DalamudLibPath>$(appdata)\XIVLauncher\addon\Hooks\dev\</DalamudLibPath>
-        <DalamudDevPlugins>$(appdata)\XIVLauncher\devPlugins\WrathCombo\</DalamudDevPlugins>
-        <DalamudPluginPath>$(appdata)\XIVLauncher\installedPlugins\WrathCombo\$(version)</DalamudPluginPath>
-        <PackagerTargetFile>$(MSBuildProjectDirectory)
-            \check_settings.json</PackagerTargetFile>
+        <DalamudDevPlugins>$(appdata)\XIVLauncher\devPlugins\</DalamudDevPlugins>
     </PropertyGroup>
 
     <!-- Path Overrides for Linux -->
@@ -57,10 +57,10 @@
 
     <!-- Dalamud Packaging -->
     <ItemGroup>
-        <PackageReference Include="DalamudPackager" Version="13.0.0" />
-        <PackageReference Include="ILRepack" Version="2.0.18" />
-        <PackageReference Include="JetBrains.Annotations" Version="2025.2.2" />
-        <PackageReference Include="TextCopy" Version="6.2.1" />
+        <PackageReference Include="DalamudPackager" Version="13.0.0"/>
+        <PackageReference Include="ILRepack" Version="2.0.18"/>
+        <PackageReference Include="JetBrains.Annotations" Version="2025.2.2"/>
+        <PackageReference Include="TextCopy" Version="6.2.1"/>
     </ItemGroup>
 
     <!-- Dalamud Libraries -->
@@ -115,7 +115,7 @@
 
     <!-- Release Manifest -->
     <ItemGroup>
-        <None Update="JustCheckSetting.json">
+        <None Update="JustCheckSettings.json">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
     </ItemGroup>

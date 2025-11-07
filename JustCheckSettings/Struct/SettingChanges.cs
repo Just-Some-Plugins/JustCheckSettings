@@ -4,11 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Threading;
 
 #endregion
 
-namespace check_setting;
+namespace JustCheckSettings.Struct;
 
 [SuppressMessage("ReSharper", "InconsistentlySynchronizedField")]
 public static class SettingChanges

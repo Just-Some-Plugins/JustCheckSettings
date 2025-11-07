@@ -2,12 +2,13 @@
 
 using System;
 using System.Collections.Generic;
+using JustCheckSettings.Struct;
 
 #endregion
 
-namespace check_setting;
+namespace JustCheckSettings.Logic;
 
-public static class Differ
+public static class Diff
 {
     /// <summary>
     ///     Produce a list of setting changes between two saved game configurations.
