@@ -1,0 +1,17 @@
+{
+  "Author": "zbee",
+  "Name": "Just Check Setting",
+  "InternalName": "JustCheckSetting",
+  "DalamudApiLevel": 13,
+  "Punchline": "Just lets you identify what XIV Setting you just changed",
+  "Description": "Watches XIV Settings for any changes, and reports if any are detected.\n(Primarily for plugin-development purposes)",
+  "RepoUrl": "https://github.com/Just-Some-Plugins/just_check_setting",
+  "IconUrl": "https://github.com/Just-Some-Plugins/Assets/raw/main/plugins/check_setting.png",
+  "Changelog": "Release",
+  "Tags": [
+    "setting",
+    "xiv setting",
+    "what setting",
+    "check setting"
+  ]
+}

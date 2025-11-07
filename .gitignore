@@ -1,0 +1,6 @@
+bin
+obj
+check_setting/bin
+check_setting/obj
+.idea
+*DotSettings*
