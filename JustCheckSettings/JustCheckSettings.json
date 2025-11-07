@@ -6,7 +6,7 @@
   "Punchline": "Just lets you identify what XIV Setting you just changed",
   "Description": "Watches XIV Settings for any changes, and reports if any are detected.\n(Primarily for plugin-development purposes)",
   "RepoUrl": "https://github.com/Just-Some-Plugins/JustCheckSettings",
-  "IconUrl": "https://github.com/Just-Some-Plugins/Assets/raw/main/plugins/JustCheckSettings.png",
+  "IconUrl": "https://github.com/Just-Some-Plugins/Assets/raw/main/plugins/JCS.png",
   "Changelog": "Rename",
   "Tags": [
     "setting",
