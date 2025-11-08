@@ -8,6 +8,12 @@
 
 (and allows you to copy a Fully-Qualified Domain Name for each setting)
 
+#### Repo:
+
+```
+https://repo.justsome.site/jsp/main/repo.json
+```
+
 </div>
 
 ---
