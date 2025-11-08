@@ -1,6 +1,6 @@
 <Solution>
   <Project Path="JustCheckSettings/JustCheckSettings.csproj">
-    <Configuration Solution="debug|Any CPU" Project="debug|x64" />
-    <Configuration Solution="main|Any CPU" Project="release|x64" />
+    <Configuration Solution="Debug|Any CPU" Project="Debug|x64" />
+    <Configuration Solution="Release|Any CPU" Project="Release|x64" />
   </Project>
 </Solution>
