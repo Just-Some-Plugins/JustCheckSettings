@@ -1,10 +1,10 @@
 ﻿<div align="center">
 
-<img src="https://github.com/Just-Some-Plugins/Assets/raw/main/plugins/JCS.png" style="width:40%" />
+<img src="https://github.com/Just-Some-Plugins/Assets/raw/main/plugins/JCS_icon.webp" style="width:40%" />
 
 ###  Just Shows FFXIV Setting Changes
 
-<img src=".github/preview.webp" style="" />
+<img src=".github/preview.webp" />
 
 (and allows you to copy a Fully-Qualified Domain Name for each setting)
 
