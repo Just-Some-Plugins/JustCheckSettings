@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="JustCheckSettings/JustCheckSettings.csproj" />
+  <Project Path="JustCheckSettings/JustCheckSettings.csproj">
+    <Configuration Solution="Debug|Any CPU" Project="Debug|x64" />
+  </Project>
 </Solution>
