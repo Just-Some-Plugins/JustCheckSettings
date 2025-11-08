@@ -19,7 +19,7 @@
     <PropertyGroup>
         <AssemblyName>JustCheckSettings</AssemblyName>
         <TargetFramework>net9.0-windows</TargetFramework>
-        <Configurations>Debug;Release</Configurations>
+        <Configurations>debug;release</Configurations>
         <EnableWindowsTargeting>true</EnableWindowsTargeting>
         <NoWarn>CS1591</NoWarn>
         <LangVersion>preview</LangVersion>
