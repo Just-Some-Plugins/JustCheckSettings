@@ -28,11 +28,12 @@ public class JustCheckSettings : IDalamudPlugin
     {
         _windowSystem.AddWindow(_changesDisplay);
 
+        // Start the Watcher
         Framework.RunOnTick(Watcher.Worker, delay: TimeSpan.FromSeconds(1));
 
+        // Set up to open the UI
         Interface.UiBuilder.OpenMainUi += _changesDisplay.Open;
         Interface.UiBuilder.Draw       += _windowSystem.Draw;
-
         Commands.AddHandler($"/{pluginInterface.InternalName.ToLower()}",
             new CommandInfo(OpenMainCommand)
                 { HelpMessage = "Open the Window to check for Setting Changes" });
@@ -65,7 +66,7 @@ public class JustCheckSettings : IDalamudPlugin
         = null!;
 
     [PluginService]
-    private static IPluginInterface Interface { get; [UsedImplicitly] set; }
+    public static IPluginInterface Interface { get; [UsedImplicitly] set; }
         = null!;
 
     [PluginService]

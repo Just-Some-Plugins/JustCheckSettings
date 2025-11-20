@@ -13,7 +13,7 @@ namespace JustCheckSettings.UI;
 
 public class ChangesDisplay : Window
 {
-    public ChangesDisplay() : base("Just Check Settings##justCheckSettings")
+    public ChangesDisplay() : base("Just Check Settings##JustCheckSettings")
     {
         Flags = ImGuiWindowFlags.AlwaysAutoResize;
     }

@@ -7,7 +7,7 @@
   "Description": "Watches XIV Settings for any changes, and reports if any are detected.\n(Primarily for plugin-development purposes)",
   "RepoUrl": "https://github.com/Just-Some-Plugins/JustCheckSettings",
   "IconUrl": "https://github.com/Just-Some-Plugins/Assets/raw/main/plugins/JCS.png",
-  "Changelog": "Rename",
+  "Changelog": "Un-Group Changes, Improve UI",
   "Tags": [
     "setting",
     "xiv setting",
