@@ -4,9 +4,12 @@
 
 ###  Just Shows FFXIV Setting Changes
 
+To serve in identifying the specific Setting Keys, and how the values map to what
+is in the UI.
+
 <img src=".github/preview.webp" />
 
-(and allows you to copy a Fully-Qualified Domain Name for each setting)
+(and allows you to copy the full Reference to each setting)
 
 #### Repo:
 
