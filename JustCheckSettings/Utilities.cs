@@ -1,10 +1,8 @@
 ﻿#region
 
 using System;
-using Dalamud.Bindings.ImGui;
 using Dalamud.Game.Config;
 using Dalamud.Utility;
-using JustCheckSettings.Struct;
 
 #endregion
 
@@ -15,18 +13,6 @@ public static class Utilities
     /// Gets just the enum name from a Fully Qualified Name of an enum.
     public static string GetEnumName(this string @string) =>
         @string.Split('.')[^1];
-
-    /// <see cref="SettingChange.Draw">Draw</see> each Change in a list of Changes
-    public static void Draw(this SettingChange[]? changes, DateTime? time = null)
-    {
-        if (changes is null)
-            return;
-
-        if (time is not null)
-            ImGui.Text($"[{time:HH:mm:ss}]");
-        foreach (var change in changes)
-            change.Draw();
-    }
 
     /// Tries to get the associated GameConfigOption value for the specified setting
     public static bool TryGetGameConfigOption(this Enum enumValue, string enumName,
