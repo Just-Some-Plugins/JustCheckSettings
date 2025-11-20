@@ -10,6 +10,7 @@ namespace JustCheckSettings.Struct;
 
 public record SettingChange
 {
+    public required DateTime When { get; init; }
     public required string EnumFullName { get; init; }
     public required Enum EnumKey { get; init; }
     public required object? OldValue { get; init; }
@@ -17,11 +18,22 @@ public record SettingChange
 
     public void Draw()
     {
-        ImGui.Text($"{EnumFullName.GetEnumName()}." +
-                   $"{EnumKey.ToString().PadRight(40)} " +
-                   $"`{OldValue ?? "?"}` > `{NewValue ?? "?"}`");
-        ImGui.SameLine();
-        if (ImGui.Button("Copy FQDN"))
+        ImGui.TableNextRow();
+        ImGui.TableNextColumn();
+        ImGui.Text($"{When:HH:mm:ss}");
+
+        ImGui.TableNextColumn();
+        ImGui.Text(
+            $"{EnumFullName.GetEnumName()}.{EnumKey.ToString()}");
+
+        ImGui.TableNextColumn();
+        ImGui.Text(OldValue?.ToString() ?? "?");
+
+        ImGui.TableNextColumn();
+        ImGui.Text(NewValue?.ToString() ?? "?");
+
+        ImGui.TableNextColumn();
+        if (ImGui.Button("Copy Reference"))
             ClipboardService.SetText($"{EnumFullName}.{EnumKey}");
     }
 }

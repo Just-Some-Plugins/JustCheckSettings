@@ -36,6 +36,7 @@ public static class Diff
                 {
                     changes.Add(new SettingChange
                     {
+                        When         = DateTime.Now,
                         EnumFullName = enumFullName,
                         EnumKey      = (Enum)key,
                         OldValue     = oldValue,
