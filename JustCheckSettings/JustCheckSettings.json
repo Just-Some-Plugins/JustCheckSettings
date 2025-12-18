@@ -2,7 +2,7 @@
   "Author": "zbee",
   "Name": "Just Check Settings",
   "InternalName": "JustCheckSettings",
-  "DalamudApiLevel": 13,
+  "DalamudApiLevel": 14,
   "Punchline": "Just lets you identify what XIV Setting you just changed",
   "Description": "Watches XIV Settings for any changes, and reports if any are detected.\n(Primarily for plugin-development purposes)",
   "RepoUrl": "https://github.com/Just-Some-Plugins/JustCheckSettings",
